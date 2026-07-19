@@ -1,0 +1,149 @@
+Task ID,Occupation (O*NET-SOC Title),Task,User ID,Date,Automation Capacity Rating,Physical Action Requirement,Involved Uncertainty,Domain Expertise Requirement,Interpersonal Communication Requirement,Human Agency Scale Rating
+16246,Biostatisticians,Calculate sample size requirements for clinical studies.,OrangeWolf,2025/3/24,3,1,1,1,1,2
+16786,Bioinformatics Scientists,Develop new software applications or customize existing applications to meet specific scientific project needs.,BlackCat,2025/3/24,4,2,2,5,2,2
+16790,Bioinformatics Scientists,Create novel computational approaches and analytical tools as required by research goals.,BlackCat,2025/3/24,4,2,3,5,2,2
+16795,Bioinformatics Scientists,"Analyze large molecular datasets, such as raw microarray data, genomic sequence data, or proteomics data, for clinical or basic research purposes.",BlackCat,2025/3/24,4,3,3,5,2,2
+16791,Bioinformatics Scientists,"Compile data for use in activities, such as gene expression profiling, genome annotation, or structural bioinformatics.",BlackCat,2025/3/24,4,2,3,5,2,2
+16793,Bioinformatics Scientists,"Manipulate publicly accessible, commercial, or proprietary genomic, proteomic, or post-genomic databases.",BlackCat,2025/3/24,4,2,3,5,2,2
+16788,Bioinformatics Scientists,Create or modify web-based bioinformatics tools.,BlackCat,2025/3/24,4,2,3,5,2,2
+16783,Bioinformatics Scientists,Instruct others in the selection and use of bioinformatics tools.,BlackCat,2025/3/24,3,3,4,5,4,4
+16807,Molecular and Cellular Biologists,Maintain accurate laboratory records and data.,BlackCat,2025/3/24,3,3,4,5,2,3
+23905,Molecular and Cellular Biologists,"Prepare or review reports, manuscripts, or meeting presentations.",BlackCat,2025/3/24,3,3,4,5,2,3
+16808,Molecular and Cellular Biologists,Instruct undergraduate and graduate students within the areas of cellular or molecular biology.,BlackCat,2025/3/24,2,4,3,5,5,5
+16814,Molecular and Cellular Biologists,Compile and analyze molecular or cellular experimental data and adjust experimental designs as necessary.,BlackCat,2025/3/24,3,2,3,5,2,3
+16265,Biostatisticians,"Analyze clinical or survey data, using statistical approaches such as longitudinal analysis, mixed-effect modeling, logistic regression analyses, and model-building techniques.",PurpleBear,2025/3/24,4,1,4,4,2,3
+16246,Biostatisticians,Calculate sample size requirements for clinical studies.,PurpleBear,2025/3/24,4,1,3,4,1,1
+16252,Biostatisticians,Prepare tables and graphs to present clinical data or results.,PurpleBear,2025/3/24,4,1,3,4,2,4
+16249,Biostatisticians,Write program code to analyze data with statistical analysis software.,PurpleBear,2025/3/24,4,1,3,4,2,4
+16284,Clinical Data Managers,"Process clinical data, including receipt, entry, verification, or filing of information.",PurpleBear,2025/3/24,3,2,4,3,2,2
+16280,Clinical Data Managers,"Generate data queries, based on validation checks or errors and omissions identified during data entry, to resolve identified problems.",PurpleBear,2025/3/24,3,1,4,4,2,4
+16279,Clinical Data Managers,Monitor work productivity or quality to ensure compliance with standard operating procedures.,PurpleBear,2025/3/24,2,2,3,2,4,2
+16277,Clinical Data Managers,"Prepare data analysis listings and activity, performance, or progress reports.",PurpleBear,2025/3/24,3,1,4,4,2,4
+16283,Clinical Data Managers,Analyze clinical data using appropriate statistical tools.,PurpleBear,2025/3/24,3,1,4,4,2,4
+16270,Clinical Data Managers,Develop technical specifications for data management programming and communicate needs to information technology staff.,PurpleBear,2025/3/24,2,1,3,3,4,4
+16274,Clinical Data Managers,"Track the flow of work forms, including in-house data flow or electronic forms transfer.",PurpleBear,2025/3/24,2,2,3,3,2,2
+17234,Radiologists,Participate in continuing education activities to maintain and develop expertise.,BrownFox,2025/3/31,3,4,4,5,4,3
+16795,Bioinformatics Scientists,"Analyze large molecular datasets, such as raw microarray data, genomic sequence data, or proteomics data, for clinical or basic research purposes.",WhiteHorse,2025/4/5,3,1,4,5,4,4
+16793,Bioinformatics Scientists,"Manipulate publicly accessible, commercial, or proprietary genomic, proteomic, or post-genomic databases.",WhiteHorse,2025/4/5,3,1,4,5,3,4
+18103,Health Informatics Specialists,Provide consultation to nurses regarding hardware or software configuration.,YellowZebra,2025/4/5,4,1,1,2,4,2
+18088,Health Informatics Specialists,"Design, develop, select, test, implement, and evaluate new or modified informatics solutions, data structures, and decision-support mechanisms to support patients, health care professionals, and their information management and human-computer and human-technology interactions within health care contexts.",YellowZebra,2025/4/5,3,1,3,4,4,4
+18092,Health Informatics Specialists,Use informatics science to design or implement health information technology applications for resolution of clinical or health care administrative problems.,YellowZebra,2025/4/5,3,1,1,3,4,3
+15583,Clinical Research Coordinators,"Review scientific literature, participate in continuing education activities, or attend conferences and seminars to maintain current knowledge of clinical studies affairs and issues.",RedTiger,2025/4/5,3,4,4,4,4,4
+18100,Health Informatics Specialists,"Develop strategies, policies or procedures for introducing, evaluating, or modifying information technology applied to nursing practice, administration, education, or research.",YellowZebra,2025/4/5,3,2,2,4,4,3
+18094,Health Informatics Specialists,"Analyze and interpret patient, nursing, or information systems data to improve nursing services.",YellowZebra,2025/4/5,3,1,2,4,4,3
+18093,Health Informatics Specialists,"Develop, implement, or evaluate health information technology applications, tools, processes, or structures to assist nurses with data management.",YellowZebra,2025/4/5,3,2,3,4,4,3
+18101,Health Informatics Specialists,"Identify, collect, record, or analyze data relevant to the nursing care of patients.",YellowZebra,2025/4/5,2,2,3,3,4,5
+18095,Health Informatics Specialists,"Analyze computer and information technologies to determine applicability to nursing practice, education, administration, and research.",YellowZebra,2025/4/5,3,1,2,3,4,3
+18090,Health Informatics Specialists,"Translate nursing practice information between nurses and systems engineers, analysts, or designers, using object-oriented models or other techniques.",YellowZebra,2025/4/5,3,1,1,3,4,3
+16807,Molecular and Cellular Biologists,Maintain accurate laboratory records and data.,WhiteHorse,2025/4/6,2,4,5,5,2,5
+16790,Bioinformatics Scientists,Create novel computational approaches and analytical tools as required by research goals.,WhiteHorse,2025/4/6,4,1,2,5,2,2
+16791,Bioinformatics Scientists,"Compile data for use in activities, such as gene expression profiling, genome annotation, or structural bioinformatics.",WhiteHorse,2025/4/6,4,2,3,4,1,2
+16783,Bioinformatics Scientists,Instruct others in the selection and use of bioinformatics tools.,WhiteHorse,2025/4/6,4,2,3,3,1,2
+15583,Clinical Research Coordinators,"Review scientific literature, participate in continuing education activities, or attend conferences and seminars to maintain current knowledge of clinical studies affairs and issues.",BlueLion,2025/4/6,3,2,2,4,3,3
+16786,Bioinformatics Scientists,Develop new software applications or customize existing applications to meet specific scientific project needs.,WhiteHorse,2025/4/6,4,1,3,5,3,4
+55,Medical and Health Services Managers,"Maintain awareness of advances in medicine, computerized diagnostic and treatment equipment, data processing technology, government regulations, health insurance changes, and financing options.",BlueLion,2025/4/6,4,1,2,5,1,2
+51,Medical and Health Services Managers,"Conduct and administer fiscal operations, including accounting, planning budgets, authorizing expenditures, establishing rates for services, and coordinating financial reporting.",BlueLion,2025/4/7,3,1,2,3,2,3
+15584,Clinical Research Coordinators,Register protocol patients with appropriate statistical centers as required.,BlueLion,2025/4/7,4,2,3,3,1,2
+49,Medical and Health Services Managers,"Develop and maintain computerized record management systems to store and process data, such as personnel activities and information, and to produce reports.",BlueLion,2025/4/7,5,1,2,2,1,1
+15590,Clinical Research Coordinators,Contact industry representatives to ensure equipment and software specifications necessary for successful study completion.,BlueLion,2025/4/7,2,1,3,4,4,4
+15594,Clinical Research Coordinators,Record adverse event and side effect data and confer with investigators regarding the reporting of events to oversight agencies.,BlueLion,2025/4/7,2,3,3,4,1,4
+61,Medical and Health Services Managers,Review and analyze facility activities and data to aid planning and cash and risk management and to improve service utilization.,BlueLion,2025/4/7,2,1,4,4,2,4
+15593,Clinical Research Coordinators,"Review proposed study protocols to evaluate factors such as sample collection processes, data management plans, or potential subject risks.",BlueLion,2025/4/7,3,3,1,3,2,3
+15614,Clinical Research Coordinators,"Maintain required records of study activity including case report forms, drug dispensation records, or regulatory forms.",BlueLion,2025/4/7,5,1,2,2,2,1
+15600,Clinical Research Coordinators,Maintain contact with sponsors to schedule and coordinate site visits or to answer questions about issues such as incomplete data.,BlueLion,2025/4/7,4,2,1,2,3,2
+15609,Clinical Research Coordinators,"Code, evaluate, or interpret collected study data.",BlueLion,2025/4/7,4,1,1,4,2,2
+52,Medical and Health Services Managers,"Establish work schedules and assignments for staff, according to workload, space, and equipment availability.",BlueLion,2025/4/7,4,2,2,3,3,2
+15607,Clinical Research Coordinators,Communicate with laboratories or investigators regarding laboratory findings.,BlueLion,2025/4/7,2,1,2,4,3,4
+15592,Clinical Research Coordinators,Track enrollment status of subjects and document dropout information such as dropout causes and subject contact efforts.,BlueLion,2025/4/7,4,1,1,3,3,2
+15595,Clinical Research Coordinators,"Prepare study-related documentation, such as protocol worksheets, procedural manuals, adverse event reports, institutional review board documents, or progress reports.",BlueLion,2025/4/7,4,2,2,3,2,2
+15608,Clinical Research Coordinators,"Collaborate with investigators to prepare presentations or reports of clinical study procedures, results, and conclusions.",BlueLion,2025/4/7,4,2,1,3,3,2
+15598,Clinical Research Coordinators,Order drugs or devices necessary for study completion.,BlueLion,2025/4/7,5,1,3,2,2,1
+57,Medical and Health Services Managers,"Prepare activity reports to inform management of the status and implementation plans of programs, services, and quality initiatives.",BlueLion,2025/4/7,4,2,1,3,2,2
+16808,Molecular and Cellular Biologists,Instruct undergraduate and graduate students within the areas of cellular or molecular biology.,WhiteHorse,2025/4/8,2,3,4,2,3,3
+23905,Molecular and Cellular Biologists,"Prepare or review reports, manuscripts, or meeting presentations.",WhiteHorse,2025/4/8,3,3,3,3,3,3
+16788,Bioinformatics Scientists,Create or modify web-based bioinformatics tools.,WhiteHorse,2025/4/8,3,3,3,3,3,3
+16809,Molecular and Cellular Biologists,Evaluate new technologies to enhance or complement current research.,WhiteHorse,2025/4/8,2,4,4,5,3,5
+16814,Molecular and Cellular Biologists,Compile and analyze molecular or cellular experimental data and adjust experimental designs as necessary.,WhiteHorse,2025/4/8,2,4,4,5,3,4
+18092,Health Informatics Specialists,Use informatics science to design or implement health information technology applications for resolution of clinical or health care administrative problems.,250_b,2025/4/22,3,2,3,3,4,3
+18093,Health Informatics Specialists,"Develop, implement, or evaluate health information technology applications, tools, processes, or structures to assist nurses with data management.",250_b,2025/4/22,3,2,2,1,3,2
+18090,Health Informatics Specialists,"Translate nursing practice information between nurses and systems engineers, analysts, or designers, using object-oriented models or other techniques.",250_b,2025/4/22,3,2,2,1,2,3
+18103,Health Informatics Specialists,Provide consultation to nurses regarding hardware or software configuration.,250_b,2025/4/22,4,2,2,1,2,2
+18094,Health Informatics Specialists,"Analyze and interpret patient, nursing, or information systems data to improve nursing services.",250_b,2025/4/22,3,2,2,1,2,3
+18088,Health Informatics Specialists,"Design, develop, select, test, implement, and evaluate new or modified informatics solutions, data structures, and decision-support mechanisms to support patients, health care professionals, and their information management and human-computer and human-technology interactions within health care contexts.",250_b,2025/4/22,3,2,2,1,2,3
+17249,Radiologists,Develop or monitor procedures to ensure adequate quality control of images.,450_b,2025/4/22,1,4,5,5,4,5
+17242,Radiologists,Prepare comprehensive interpretive reports of findings.,450_b,2025/4/22,2,3,5,5,4,1
+17248,Radiologists,"Document the performance, interpretation, or outcomes of all procedures performed.",450_b,2025/4/22,2,4,5,5,4,2
+17254,Radiologists,"Perform or interpret the outcomes of diagnostic imaging procedures including magnetic resonance imaging (MRI), computer tomography (CT), positron emission tomography (PET), nuclear cardiology treadmill studies, mammography, or ultrasound.",450_b,2025/4/22,3,3,5,5,3,2
+17239,Radiologists,Review or transmit images and information using picture archiving or communications systems.,450_b,2025/4/23,2,3,4,4,3,1
+17234,Radiologists,Participate in continuing education activities to maintain and develop expertise.,450,2025/4/26,2,4,1,1,5,5
+51,Medical and Health Services Managers,"Conduct and administer fiscal operations, including accounting, planning budgets, authorizing expenditures, establishing rates for services, and coordinating financial reporting.",50_b,2025/4/30,4,3,2,4,2,2
+55,Medical and Health Services Managers,"Maintain awareness of advances in medicine, computerized diagnostic and treatment equipment, data processing technology, government regulations, health insurance changes, and financing options.",50_b,2025/4/30,4,2,4,4,2,2
+18092,Health Informatics Specialists,Use informatics science to design or implement health information technology applications for resolution of clinical or health care administrative problems.,250_a,2025/4/30,2,1,5,5,3,4
+18088,Health Informatics Specialists,"Design, develop, select, test, implement, and evaluate new or modified informatics solutions, data structures, and decision-support mechanisms to support patients, health care professionals, and their information management and human-computer and human-technology interactions within health care contexts.",250_a,2025/4/30,2,1,4,5,4,5
+18101,Health Informatics Specialists,"Identify, collect, record, or analyze data relevant to the nursing care of patients.",250_a,2025/4/30,3,1,4,5,4,3
+15612,Clinical Research Coordinators,"Schedule subjects for appointments, procedures, or inpatient stays as required by study protocols.",100_b,2025/4/30,2,4,5,4,3,2
+15607,Clinical Research Coordinators,Communicate with laboratories or investigators regarding laboratory findings.,100_b,2025/4/30,2,4,4,5,3,3
+15590,Clinical Research Coordinators,Contact industry representatives to ensure equipment and software specifications necessary for successful study completion.,100_b,2025/4/30,3,4,4,5,3,4
+15592,Clinical Research Coordinators,Track enrollment status of subjects and document dropout information such as dropout causes and subject contact efforts.,100_b,2025/4/30,2,1,5,5,4,4
+17248,Radiologists,"Document the performance, interpretation, or outcomes of all procedures performed.",450_a,2025/5/1,3,3,5,4,3,3
+17239,Radiologists,Review or transmit images and information using picture archiving or communications systems.,450_a,2025/5/1,4,5,4,4,2,2
+17254,Radiologists,"Perform or interpret the outcomes of diagnostic imaging procedures including magnetic resonance imaging (MRI), computer tomography (CT), positron emission tomography (PET), nuclear cardiology treadmill studies, mammography, or ultrasound.",450_a,2025/5/1,3,3,4,3,2,3
+17242,Radiologists,Prepare comprehensive interpretive reports of findings.,450_a,2025/5/1,3,2,2,2,3,3
+17231,Radiologists,Participate in quality improvement activities including discussions of areas where risk of error is high.,450_a,2025/5/1,2,5,4,5,5,5
+17249,Radiologists,Develop or monitor procedures to ensure adequate quality control of images.,450_a,2025/5/1,3,3,2,3,3,3
+18095,Health Informatics Specialists,"Analyze computer and information technologies to determine applicability to nursing practice, education, administration, and research.",300_a,2025/5/1,2,1,4,5,4,4
+15594,Clinical Research Coordinators,Record adverse event and side effect data and confer with investigators regarding the reporting of events to oversight agencies.,100_b,2025/5/1,3,3,4,5,4,5
+15593,Clinical Research Coordinators,"Review proposed study protocols to evaluate factors such as sample collection processes, data management plans, or potential subject risks.",100_b,2025/5/1,2,1,4,5,3,5
+15583,Clinical Research Coordinators,"Review scientific literature, participate in continuing education activities, or attend conferences and seminars to maintain current knowledge of clinical studies affairs and issues.",100_b,2025/5/1,2,2,2,5,2,2
+57,Medical and Health Services Managers,"Prepare activity reports to inform management of the status and implementation plans of programs, services, and quality initiatives.",100_b,2025/5/1,3,1,3,4,3,4
+61,Medical and Health Services Managers,Review and analyze facility activities and data to aid planning and cash and risk management and to improve service utilization.,100_b,2025/5/1,3,1,4,5,3,4
+15614,Clinical Research Coordinators,"Maintain required records of study activity including case report forms, drug dispensation records, or regulatory forms.",100_b,2025/5/1,4,2,2,4,2,3
+15609,Clinical Research Coordinators,"Code, evaluate, or interpret collected study data.",100_b,2025/5/1,4,1,3,5,2,4
+18100,Health Informatics Specialists,"Develop strategies, policies or procedures for introducing, evaluating, or modifying information technology applied to nursing practice, administration, education, or research.",300_a,2025/5/1,1,1,5,5,5,5
+16274,Clinical Data Managers,"Track the flow of work forms, including in-house data flow or electronic forms transfer.",150,2025/5/6,3,4,5,4,3,4
+16252,Biostatisticians,Prepare tables and graphs to present clinical data or results.,150,2025/5/6,2,2,3,5,3,2
+16280,Clinical Data Managers,"Generate data queries, based on validation checks or errors and omissions identified during data entry, to resolve identified problems.",150,2025/5/6,3,2,1,2,4,3
+16270,Clinical Data Managers,Develop technical specifications for data management programming and communicate needs to information technology staff.,150,2025/5/6,3,2,2,4,5,3
+16262,Biostatisticians,Review clinical or other medical research protocols and recommend appropriate statistical analyses.,150,2025/5/8,4,3,5,5,3,2
+16283,Clinical Data Managers,Analyze clinical data using appropriate statistical tools.,150,2025/5/8,3,3,5,4,4,3
+16249,Biostatisticians,Write program code to analyze data with statistical analysis software.,150,2025/5/8,4,1,2,5,1,4
+16277,Clinical Data Managers,"Prepare data analysis listings and activity, performance, or progress reports.",150,2025/5/8,4,2,1,3,1,5
+16284,Clinical Data Managers,"Process clinical data, including receipt, entry, verification, or filing of information.",150,2025/5/9,3,1,1,3,1,4
+16279,Clinical Data Managers,Monitor work productivity or quality to ensure compliance with standard operating procedures.,150,2025/5/9,4,2,2,2,2,2
+15595,Clinical Research Coordinators,"Prepare study-related documentation, such as protocol worksheets, procedural manuals, adverse event reports, institutional review board documents, or progress reports.",100_a,2025/5/9,2,4,3,4,4,4
+15592,Clinical Research Coordinators,Track enrollment status of subjects and document dropout information such as dropout causes and subject contact efforts.,100_a,2025/5/9,3,2,2,3,1,2
+52,Medical and Health Services Managers,"Establish work schedules and assignments for staff, according to workload, space, and equipment availability.",100_a,2025/5/9,3,2,2,3,3,3
+61,Medical and Health Services Managers,Review and analyze facility activities and data to aid planning and cash and risk management and to improve service utilization.,100_a,2025/5/9,2,1,3,4,2,2
+15612,Clinical Research Coordinators,"Schedule subjects for appointments, procedures, or inpatient stays as required by study protocols.",100_a,2025/5/9,1,2,1,2,2,2
+15583,Clinical Research Coordinators,"Review scientific literature, participate in continuing education activities, or attend conferences and seminars to maintain current knowledge of clinical studies affairs and issues.",100_a,2025/5/9,1,3,2,5,4,4
+15584,Clinical Research Coordinators,Register protocol patients with appropriate statistical centers as required.,100_a,2025/5/10,4,2,3,2,2,2
+51,Medical and Health Services Managers,"Conduct and administer fiscal operations, including accounting, planning budgets, authorizing expenditures, establishing rates for services, and coordinating financial reporting.",50_a,2025/5/10,4,1,3,3,3,3
+49,Medical and Health Services Managers,"Develop and maintain computerized record management systems to store and process data, such as personnel activities and information, and to produce reports.",50_a,2025/5/10,5,1,2,4,1,2
+15594,Clinical Research Coordinators,Record adverse event and side effect data and confer with investigators regarding the reporting of events to oversight agencies.,100_a,2025/5/10,3,2,3,4,3,3
+15608,Clinical Research Coordinators,"Collaborate with investigators to prepare presentations or reports of clinical study procedures, results, and conclusions.",100_a,2025/5/10,3,1,2,4,2,3
+15607,Clinical Research Coordinators,Communicate with laboratories or investigators regarding laboratory findings.,100_a,2025/5/10,2,4,2,4,3,4
+15593,Clinical Research Coordinators,"Review proposed study protocols to evaluate factors such as sample collection processes, data management plans, or potential subject risks.",100_a,2025/5/10,2,1,3,4,1,3
+57,Medical and Health Services Managers,"Prepare activity reports to inform management of the status and implementation plans of programs, services, and quality initiatives.",100_a,2025/5/10,2,2,3,3,2,3
+15590,Clinical Research Coordinators,Contact industry representatives to ensure equipment and software specifications necessary for successful study completion.,100_a,2025/5/10,2,3,2,4,3,3
+15600,Clinical Research Coordinators,Maintain contact with sponsors to schedule and coordinate site visits or to answer questions about issues such as incomplete data.,100_a,2025/5/10,2,4,2,4,4,4
+16788,Bioinformatics Scientists,Create or modify web-based bioinformatics tools.,250,2025/5/10,4,2,2,3,2,3
+16814,Molecular and Cellular Biologists,Compile and analyze molecular or cellular experimental data and adjust experimental designs as necessary.,250,2025/5/10,2,4,4,4,1,4
+16791,Bioinformatics Scientists,"Compile data for use in activities, such as gene expression profiling, genome annotation, or structural bioinformatics.",250,2025/5/11,4,1,3,4,1,2
+23905,Molecular and Cellular Biologists,"Prepare or review reports, manuscripts, or meeting presentations.",250,2025/5/11,4,1,2,2,2,2
+18100,Health Informatics Specialists,"Develop strategies, policies or procedures for introducing, evaluating, or modifying information technology applied to nursing practice, administration, education, or research.",300_b,2025/5/11,2,3,2,3,4,4
+16809,Molecular and Cellular Biologists,Evaluate new technologies to enhance or complement current research.,250,2025/5/11,2,1,4,5,3,5
+16786,Bioinformatics Scientists,Develop new software applications or customize existing applications to meet specific scientific project needs.,250,2025/5/11,4,1,3,4,3,3
+18095,Health Informatics Specialists,"Analyze computer and information technologies to determine applicability to nursing practice, education, administration, and research.",300_b,2025/5/11,3,1,2,4,2,3
+16783,Bioinformatics Scientists,Instruct others in the selection and use of bioinformatics tools.,250,2025/5/11,3,1,2,4,4,3
+15598,Clinical Research Coordinators,Order drugs or devices necessary for study completion.,yijia,2025/5/15,4,1,2,1,1,2
+16265,Biostatisticians,"Analyze clinical or survey data, using statistical approaches such as longitudinal analysis, mixed-effect modeling, logistic regression analyses, and model-building techniques.",yijia,2025/5/15,4,1,1,4,1,2
+17231,Radiologists,Participate in quality improvement activities including discussions of areas where risk of error is high.,yijia,2025/5/15,2,1,2,5,3,3
+16262,Biostatisticians,Review clinical or other medical research protocols and recommend appropriate statistical analyses.,yijia,2025/5/15,4,1,1,3,1,2
+9421,Medical Transcriptionists,"Produce medical reports, correspondence, records, patient-care information, statistics, medical research, and administrative material.",BrownFox,2025/3/31,5,1,1,1,1,1
+9416,Medical Transcriptionists,"Return dictated reports in printed or electronic form for physician's review, signature, and corrections and for inclusion in patients' medical records.",BrownFox,2025/4/1,5,2,2,2,2,2
+9423,Medical Transcriptionists,"Set up and maintain medical files and databases, including records such as x-ray, lab, and procedure reports, medical histories, diagnostic workups, admission and discharge summaries, and clinical resumes.",BrownFox,2025/4/18,5,2,2,5,3,2
+9413,Medical Transcriptionists,"Transcribe dictation for a variety of medical reports, such as patient histories, physical examinations, emergency room visits, operations, chart reviews, consultation, or discharge summaries.",450_b,2025/4/22,5,1,4,4,1,1
+9420,Medical Transcriptionists,"Perform data entry and data retrieval services, providing data for inclusion in medical records and for transmission to physicians.",450_b,2025/4/22,5,1,4,4,1,1
+9415,Medical Transcriptionists,"Distinguish between homonyms and recognize inconsistencies and mistakes in medical terms, referring to dictionaries, drug references, and other sources on anatomy, physiology, and medicine.",450_b,2025/4/22,4,1,5,3,1,1
+9417,Medical Transcriptionists,Translate medical jargon and abbreviations into their expanded forms to ensure the accuracy of patient and health care facility records.,450_b,2025/4/22,5,1,4,4,1,1
+9414,Medical Transcriptionists,"Review and edit transcribed reports or dictated material for spelling, grammar, clarity, consistency, and proper medical terminology.",450_b,2025/4/23,5,1,4,4,1,1
