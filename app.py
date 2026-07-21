@@ -356,8 +356,6 @@ with tab3:
         if 'Job_Security_Fear_Rate' in df_filtered.columns:
             fear_df = df_filtered.groupby('Occupation (O*NET-SOC Title)')['Job_Security_Fear_Rate'].mean().reset_index()
             fear_df = fear_df.sort_values(by='Job_Security_Fear_Rate', ascending=True)
-            
-            # Đổi tên cột hiển thị thân thiện hơn để tránh mang tính lập trình
             fear_df = fear_df.rename(columns={'Job_Security_Fear_Rate': 'Tỷ lệ lo ngại'})
             
             fig5 = px.bar(
