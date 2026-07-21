@@ -357,13 +357,16 @@ with tab3:
             fear_df = df_filtered.groupby('Occupation (O*NET-SOC Title)')['Job_Security_Fear_Rate'].mean().reset_index()
             fear_df = fear_df.sort_values(by='Job_Security_Fear_Rate', ascending=True)
             
+            # Đổi tên cột hiển thị thân thiện hơn để tránh mang tính lập trình
+            fear_df = fear_df.rename(columns={'Job_Security_Fear_Rate': 'Tỷ lệ lo ngại'})
+            
             fig5 = px.bar(
                 fear_df,
-                x='Job_Security_Fear_Rate',
+                x='Tỷ lệ lo ngại',
                 y='Occupation (O*NET-SOC Title)',
                 orientation='h',
                 title="5. NỖI SỢ MẤT VIỆC THEO NHÓM ĐÃ LỌC",
-                color='Job_Security_Fear_Rate',
+                color='Tỷ lệ lo ngại',
                 color_continuous_scale='Reds'
             )
             fig5.update_layout(
@@ -371,8 +374,22 @@ with tab3:
                 plot_bgcolor='#FFFFFF',
                 title_font_color='#0369A1',
                 title_x=0.0,
-                xaxis=dict(title="Tỷ lệ sợ bị thay thế (%)", title_font=dict(color='#0369A1')),
-                yaxis=dict(title="Chuyên khoa / Ngành nghề", title_font=dict(color='#0369A1'))
+                font=dict(color='#334155', size=12),
+                xaxis=dict(
+                    title="Tỷ lệ sợ bị thay thế (%)", 
+                    title_font=dict(color='#0369A1'),
+                    tickfont=dict(color='#334155'),
+                    gridcolor='#E2E8F0'
+                ),
+                yaxis=dict(
+                    title="Chuyên khoa / Ngành nghề", 
+                    title_font=dict(color='#0369A1'),
+                    tickfont=dict(color='#334155')
+                ),
+                coloraxis_colorbar=dict(
+                    title=dict(text="Tỷ lệ lo ngại", font=dict(color='#0369A1')),
+                    tickfont=dict(color='#334155')
+                )
             )
             st.plotly_chart(fig5, use_container_width=True)
         else:
