@@ -32,8 +32,6 @@ h1, h2, h3 {
 p, .stMarkdown p, span, label {
     color: #334155 !important;
 }
-
-/* --- THẺ THỨ 1: MÀU OMBRE CHUẨN XÁC NHƯ ẢNH MẪU --- */
 .metric-card-1 {
     background: linear-gradient(135deg, rgba(237, 233, 254, 0.95) 0%, rgba(243, 244, 246, 0.4) 60%, rgba(255, 255, 255, 0.9) 100%);
     border: 1px solid #E9D5FF;
@@ -53,8 +51,6 @@ p, .stMarkdown p, span, label {
     border-radius: 20px;
     box-shadow: 0 15px 30px -5px rgba(225, 29, 72, 0.35), 0 8px 12px -6px rgba(225, 29, 72, 0.2);
 }
-
-/* --- PHẦN KẾT LUẬN & ĐỊNH HƯỚNG OMBRE & 3D SIÊU THỰC --- */
 .gradient-expert-container {
     background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
     border: 1px solid #CBD5E1;
@@ -89,7 +85,6 @@ p, .stMarkdown p, span, label {
 .grad-action-box h4, .grad-action-box p {
     color: #FFFFFF !important;
 }
-
 .rec-card {
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
@@ -98,16 +93,15 @@ p, .stMarkdown p, span, label {
     margin-bottom: 14px;
     box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.04);
     border-left: 6px solid #10B981;
-}
-
-stTabs [data-baseweb="tab-list"] {
+}          
+div.stTabs [data-baseweb="tab-list"] {
     gap: 8px;
     background: linear-gradient(135deg, #CBD5E1 0%, #93C5FD 100%);
     padding: 8px;
     border-radius: 18px;
     border: 1px solid #94A3B8;
 }
-stTabs [data-baseweb="tab"] {
+div.stTabs [data-baseweb="tab"] {
     background-color: #FFFFFF;
     border-radius: 12px;
     padding: 8px 16px;
@@ -117,11 +111,12 @@ stTabs [data-baseweb="tab"] {
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     font-size: 13.5px;
 }
-stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, #0284C7 0%, #0369A1 50%, #0F172A 100%) !important;
+div.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #38BDF8 0%, #0284C7 50%, #0369A1 100%) !important;
     color: #FFFFFF !important;
     font-weight: 800;
     box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+    border: 1px solid #0284C7 !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -259,19 +254,19 @@ med_colors = {
 # 3. THANH SIDEBAR
 # ==========================================
 with st.sidebar:
-    st.markdown("### 🏥 AI Medical Analytics")
+    st.markdown("### AI Medical Analytics")
     st.markdown("---")
-    st.markdown("👨‍⚕️ **BỘ LỌC CHUYÊN KHOA**")
+    st.markdown("**BỘ LỌC CHUYÊN KHOA**")
     occupations = df_master['Occupation (O*NET-SOC Title)'].unique().tolist()
     selected_occ = st.selectbox("Chọn chuyên khoa y tế:", ["Tất cả Chuyên khoa"] + occupations)
     
     st.markdown("---")
-    st.markdown("📊 **BỘ LỌC TỰ ĐỘNG HÓA**")
+    st.markdown("**BỘ LỌC TỰ ĐỘNG HÓA**")
     quadrants = ["Tất cả phân vùng"] + df_master['Phân Vùng Tự Động Hóa'].unique().tolist()
     selected_quadrant = st.selectbox("Chọn nhóm tự động hóa:", quadrants)
     
     st.markdown("---")
-    st.markdown("🎚️ **BỘ LỌC THÔNG SỐ ĐỘNG**")
+    st.markdown("**BỘ LỌC THÔNG SỐ ĐỘNG**")
     min_roi, max_roi = float(df_master['Automation_ROI_Score'].min()), float(df_master['Automation_ROI_Score'].max())
     selected_roi_range = st.slider("Khoảng chỉ số Sinh lời (ROI):", min_value=min_roi, max_value=max_roi, value=(min_roi, max_roi))
     
@@ -279,7 +274,7 @@ with st.sidebar:
     selected_max_risk = st.slider("Ngưỡng Rủi ro Y khoa tối đa:", min_value=0.0, max_value=max_risk, value=max_risk)
     
     st.markdown("---")
-    st.info("💡 **Hệ thống Quản trị:** Phân tích tác vụ tự động hóa và rủi ro y khoa dựa trên dữ liệu O*NET.")
+    st.info("**Hệ thống Quản trị:** Phân tích tác vụ tự động hóa và rủi ro y khoa dựa trên dữ liệu O*NET.")
 
 # ==========================================
 # 4. HEADER CHÍNH & METRIC CARDS TRỰC QUAN
@@ -342,12 +337,12 @@ st.write("")
 # 5. GIAO DIỆN CHIA TABS
 # ==========================================
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "📍 Bức Tranh Toàn Cảnh & Ma Trận ROI",
-    "📈 Phân Tích Đa Chiều Kỹ Năng Y Tế",
-    "📊 Phân Bổ Chiến Lược & Tâm Lý Lao Động",
-    "🚀 Top Khuyến Nghị Thí Điểm",
-    "🔍 Tra Cứu Chi Tiết Tác Vụ Y TẾ",
-    "🔮 Mô Phỏng Giả Định & Đầu Tư AI"
+    "Bức Tranh Toàn Cảnh & Ma Trận ROI",
+    "Phân Tích Đa Chiều Kỹ Năng Y Tế",
+    "Phân Bổ Chiến Lược & Tâm Lý Lao Động",
+    "Top Khuyến Nghị Thí Điểm",
+    "Tra Cứu Chi Tiết Tác Vụ Y TẾ",
+    "Mô Phỏng Giả Định & Đầu Tư AI"
 ])
 
 # TAB 1: BỨC TRANH TOÀN CẢNH & ROI
@@ -358,7 +353,7 @@ with tab1:
     with col1:
         st.markdown("""
         <div style="background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #CBD5E1; border-top: 5px solid #0284C7; border-radius: 16px 16px 0 0; padding: 18px 22px 12px 22px; margin-bottom: 0; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.08);">
-            <h4 style="color: #0369A1 !important; margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.5px;">NĂNG LỰC AI VS ĐÓN NHẬN CỦA Y BÁC SĨ</h4>
+            <h4 style="color: #0369A1 !important; margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.5px;">NĂNG LỰC AI & ĐÓN NHẬN CỦA Y BÁC SĨ</h4>
         </div>
         """, unsafe_allow_html=True)
         
@@ -480,7 +475,7 @@ with tab1:
 
 # TAB 2: RADAR PHÂN TÍCH KỸ NĂNG
 with tab2:
-    st.subheader("ĐÁNH GIÁ ĐA CHIỀU NHÓM KỸ NĂNG Y TẾ")
+    st.subheader("ĐÁNH GIÁ ĐA CHIỀU NHÓM KỸ NĂNG Y Tế")
     
     st.markdown("""
     <div style="background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #CBD5E1; border-top: 5px solid #6366F1; border-radius: 16px 16px 0 0; padding: 18px 22px 12px 22px; margin-bottom: 0; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.08);">
