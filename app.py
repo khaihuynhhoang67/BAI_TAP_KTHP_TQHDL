@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # ==========================================
-# 1. CẤU HÌNH TRANG & GIAO DIỆN LIGHT MEDICAL DASHBOARD
+# 1. CẤU HÌNH TRANG & CẤU TRÚC MÀU SẮC ĐỒNG BỘ (EXECUTIVE COLOR PALETTE)
 # ==========================================
 st.set_page_config(
     page_title="Hệ Thống Quản Trị & Tự Động Hóa Y Tế",
@@ -15,9 +15,11 @@ st.set_page_config(
 st.markdown("""
 <style>
 .stApp {
-    background-color: #F0F4F8;
+    background-color: #F8FAFC;
     color: #1E293B;
 }
+
+/* 1. Sidebar Style */
 section[data-testid="stSidebar"] {
     background: linear-gradient(180deg, #0284C7 0%, #0369A1 50%, #0F172A 100%);
     border-right: 1px solid #0284C7;
@@ -26,50 +28,72 @@ section[data-testid="stSidebar"] p, section[data-testid="stSidebar"] span,
 section[data-testid="stSidebar"] label, section[data-testid="stSidebar"] h3 {
     color: #F8FAFC !important;
 }
-h1, h2, h3 {
-    color: #0369A1 !important;
-}
-p, .stMarkdown p, span, label {
-    color: #334155 !important;
-}
+
+/* 2. Style Metric Cards */
 .metric-card-1 {
-    background: linear-gradient(135deg, #FFFFFF 0%, #D8B4FE 100%);
+    background: linear-gradient(135deg, #FFFFFF 0%, #F3E8FF 100%);
     border: 1px solid #E9D5FF;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.15);
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.12);
 }
 .metric-card-2 {
     background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.25);
 }
 .metric-card-3 {
-    background: linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #FB923C 100%);
+    background: linear-gradient(135deg, #F43F5E 0%, #FB923C 100%);
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(244, 63, 94, 0.35);
+    box-shadow: 0 4px 20px rgba(244, 63, 94, 0.25);
 }
+
+/* 3. MÀU TÙY CHỈNH CHO CÁC KHỐI ĐÁNH GIÁ (CUSTOM COLORED CARDS) */
+.card-left-eval {
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    border-left: 5px solid #6366F1;
+    border-radius: 12px;
+    padding: 18px;
+    height: 100%;
+}
+.card-right-eval {
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+    border-left: 5px solid #0284C7;
+    border-radius: 12px;
+    padding: 18px;
+    height: 100%;
+}
+
+/* 4. Khung Kết Luận Màu Xanh Lá Y Tế (Executive Green Box) */
+.conclusion-box-colorful {
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+    border: 1px solid #6EE7B7;
+    border-left: 6px solid #059669;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.08);
+}
+
+/* 5. Custom Tabs Styling */
 stTabs [data-baseweb="tab-list"] {
     gap: 12px;
-    background: linear-gradient(135deg, #E2E8F0 0%, #BAE6FD 100%);
-    padding: 10px;
+    background: #E2E8F0;
+    padding: 8px;
     border-radius: 16px;
-    border: 1px solid #94A3B8;
 }
 stTabs [data-baseweb="tab"] {
     background-color: #FFFFFF;
     border-radius: 10px;
-    padding: 10px 24px;
+    padding: 8px 20px;
     color: #0369A1;
     font-weight: 700;
-    border: 1px solid #BAE6FD;
 }
 stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, #0284C7 0%, #0369A1 50%, #0F172A 100%) !important;
+    background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
     color: #FFFFFF !important;
-    font-weight: 800;
     box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
 }
 </style>
@@ -191,7 +215,7 @@ if selected_quadrant != "Tất cả phân vùng":
     df_filtered = df_filtered[df_filtered['Phân Vùng Tự Động Hóa'] == selected_quadrant]
 
 # ==========================================
-# 5. GIAO DIỆN CHIA TABS
+# 5. GIAO DIỆN CHIA TABS VỚI MÀU SẮC ĐỒNG BỘ
 # ==========================================
 tab1, tab2, tab3, tab4 = st.tabs([
     "📍 Bức Tranh Toàn Cảnh & Ma Trận ROI",
@@ -200,260 +224,270 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "🔍 Tra Cứu Chi Tiết Tác Vụ Y TẾ"
 ])
 
-# TAB 1: BỨC TRANH TOÀN CẢNH & ROI (TASK 3)
+# ------------------------------------------
+# TAB 1: BỨC TRANH TOÀN CẢNH & MA TRẬN ROI
+# ------------------------------------------
 with tab1:
     st.subheader("🌐 ĐỊNH VỊ TÁC VỤ & ĐÁNH GIÁ RỦI RO Y KHOA")
-    col1, col2 = st.columns(2)
-    with col1:
-        fig1 = px.scatter(
-            df_filtered,
-            x='AI_Capability',
-            y='Worker_Receptiveness',
-            color='Phân Vùng Tự Động Hóa',
-            hover_name='Task',
-            color_discrete_map=med_colors,
-            size_max=15,
-            title="1. NĂNG LỰC AI VS ĐÓN NHẬN CỦA Y BÁC SĨ"
-        )
-        fig1.update_layout(
-            plot_bgcolor='#FFFFFF',
-            paper_bgcolor='#FFFFFF',
-            title_font_color='#0369A1',
-            title_x=0.0,
-            font=dict(color="#335547", size=12),
-            xaxis=dict(title="Năng lực của AI", title_font=dict(color='#0369A1'), tickfont=dict(color='#334155'), gridcolor='#E2E8F0'),
-            yaxis=dict(title="Mức độ đón nhận của nhân sự", title_font=dict(color='#0369A1'), tickfont=dict(color='#334155'), gridcolor='#E2E8F0'),
-            legend=dict(
-                font=dict(color='#334155', size=11),
-                title=dict(font=dict(color='#0369A1', size=12)),
-                bgcolor='rgba(255, 255, 255, 0.9)'
-            )
-        )
-        st.plotly_chart(fig1, use_container_width=True)
+    
+    fig1 = px.scatter(
+        df_filtered,
+        x='AI_Capability',
+        y='Worker_Receptiveness',
+        color='Phân Vùng Tự Động Hóa',
+        hover_name='Task',
+        color_discrete_map=med_colors,
+        size_max=15,
+        title="NĂNG LỰC AI VS MỨC ĐỘ ĐÓN NHẬN"
+    )
+    fig1.update_layout(
+        plot_bgcolor='#FFFFFF', paper_bgcolor='#FFFFFF',
+        title_font_color='#0369A1', title_x=0.0, height=420,
+        xaxis=dict(title="Năng lực AI", gridcolor='#E2E8F0'),
+        yaxis=dict(title="Mức độ đón nhận", gridcolor='#E2E8F0')
+    )
+    st.plotly_chart(fig1, use_container_width=True)
 
-    with col2:
-        fig2 = px.scatter(
-            df_filtered,
-            x='Automation_ROI_Score',
-            y='Medical_Risk_Score',
-            size='Task_Impact_Score',
-            color='Phân Vùng Tự Động Hóa',
-            hover_name='Task',
-            color_discrete_map=med_colors,
-            size_max=40,
-            title="2. MA TRẬN SINH LỜI (ROI) & RỦI RO"
-        )
-        if not df_filtered.empty:
-            mid_roi = df_filtered['Automation_ROI_Score'].median()
-            mid_risk = df_filtered['Medical_Risk_Score'].median()
-            fig2.add_hline(y=mid_risk, line_dash="dash", line_color="#E11D48")
-            fig2.add_vline(x=mid_roi, line_dash="dash", line_color="#059669")
-        
-        fig2.update_layout(
-            plot_bgcolor='#FFFFFF',
-            paper_bgcolor='#FFFFFF',
-            title_font_color='#0369A1',
-            title_x=0.0,
-            font=dict(color='#334155', size=12),
-            xaxis=dict(title="Chỉ số Sinh lời (ROI)", title_font=dict(color='#0369A1'), tickfont=dict(color='#334155'), gridcolor='#E2E8F0'),
-            yaxis=dict(title="Điểm rủi ro y khoa", title_font=dict(color='#0369A1'), tickfont=dict(color='#334155'), gridcolor='#E2E8F0'),
-            legend=dict(
-                font=dict(color='#334155', size=11),
-                title=dict(font=dict(color='#0369A1', size=12)),
-                bgcolor='rgba(255, 255, 255, 0.9)'
-            )
-        )
-        st.plotly_chart(fig2, use_container_width=True)
+    with st.container(border=True):
+        st.markdown("### 🧠 GÓC NHÌN CHUYÊN GIA & ĐỊNH HƯỚNG QUẢN TRỊ")
+        n_total = len(df_filtered)
+        if n_total > 0:
+            qw_pct = (len(df_filtered[df_filtered['Phân Vùng Tự Động Hóa'].str.contains('Quick Wins|Mỏ Vàng', na=False)]) / n_total) * 100
+            sh_pct = (len(df_filtered[df_filtered['Phân Vùng Tự Động Hóa'].str.contains('Safe Haven|Thành Trì', na=False)]) / n_total) * 100
+            um_pct = (len(df_filtered[df_filtered['Phân Vùng Tự Động Hóa'].str.contains('Unmet Needs|Chờ Công Nghệ', na=False)]) / n_total) * 100
+            rs_pct = (len(df_filtered[df_filtered['Phân Vùng Tự Động Hóa'].str.contains('Resistance|Kháng Cự', na=False)]) / n_total) * 100
 
-# TAB 2: RADAR PHÂN TÍCH KỸ NĂNG (TASK 3)
+            c1, c2 = st.columns(2)
+            with c1:
+                st.markdown(f"""
+                <div class="card-left-eval">
+                    <h4 style="color: #4338CA; margin-top:0;">📊 Chỉ Số Tác Động Vận Hành</h4>
+                    <ul style="margin-bottom:0; color: #1E1B4B;">
+                        <li><b>Nhóm Mỏ Vàng AI (Quick Wins):</b> <span style="color:#059669; font-weight:bold;">{qw_pct:.1f}%</span> (Ưu tiên áp dụng ngay)</li>
+                        <li><b>Nhóm Thành Trì (Safe Haven):</b> <span style="color:#E11D48; font-weight:bold;">{sh_pct:.1f}%</span> (Bác sĩ trực tiếp làm)</li>
+                        <li><b>Nhóm Chờ Công Nghệ (Unmet Needs):</b> <span style="color:#D97706; font-weight:bold;">{um_pct:.1f}%</span> (Cần cải tiến AI)</li>
+                        <li><b>Nhóm Kháng Cự (Resistance):</b> <span style="color:#4F0CEA; font-weight:bold;">{rs_pct:.1f}%</span> (Quản trị sự thay đổi)</li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
+            with c2:
+                st.markdown(f"""
+                <div class="card-right-eval">
+                    <h4 style="color: #0369A1; margin-top:0;">🔬 Phân Tích Thực Trạng Lâm Sàng</h4>
+                    <p style="color: #0C4A6E; margin-bottom:0;">
+                        Đang phân tích <b>{n_total} tác vụ</b> thuộc chuyên khoa <b>{selected_occ}</b>. 
+                        Các tác vụ đòi hỏi sự tương tác trực tiếp và thấu cảm y khoa có điểm đón nhận thấp hơn nhưng tính an toàn cao hơn.
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            st.markdown(f"""
+            <div class="conclusion-box-colorful">
+                <h4 style="color: #065F46; margin-top:0;">🎯 ĐỊNH HƯỚNG HÀNH ĐỘNG & TRIỂN KHAI</h4>
+                <p style="color: #064E3B; margin-bottom:0; font-size: 14.5px; line-line: 1.6;">
+                    Dựa trên ma trận phân bổ <b>{selected_occ}</b>, đơn vị nên tập trung triển khai ngay <b>{qw_pct:.1f}% tác vụ Mỏ Vàng AI</b> để tối ưu hóa năng suất vận hành. Với <b>{sh_pct:.1f}% tác vụ Thành Trì Con Người</b>, tuyệt đối không thay thế hoàn toàn bằng AI mà chỉ dùng AI làm trợ lý tra cứu.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.warning("Không có dữ liệu phù hợp với bộ lọc hiện tại.")
+
+# ------------------------------------------
+# TAB 2: PHÂN TÍCH ĐA CHIỀU KỸ NĂNG Y TẾ
+# ------------------------------------------
 with tab2:
     st.subheader("🎯 ĐÁNH GIÁ ĐA CHIỀU NHÓM KỸ NĂNG Y TẾ")
+    
     skill_list = df_skill['Nhóm Kỹ Năng Y Tế'].unique().tolist()
-    selected_skills = st.multiselect("🔍 Lọc chọn nhóm Kỹ năng y tế để so sánh chi tiết:", skill_list, default=skill_list[:min(3, len(skill_list))])
+    selected_skills = st.multiselect("🔍 Lọc chọn nhóm Kỹ năng y tế để so sánh:", skill_list, default=skill_list[:min(3, len(skill_list))])
     
     if selected_skills:
         df_radar = df_skill[df_skill['Nhóm Kỹ Năng Y Tế'].isin(selected_skills)]
         df_melted = df_radar.melt(
             id_vars=['Nhóm Kỹ Năng Y Tế'],
             value_vars=['Avg_AI_Capability', 'Avg_Worker_Desire', 'Avg_Ethics_Empathy_Need'],
-            var_name='Tiêu chí',
-            value_name='Điểm số'
+            var_name='Tiêu chí', value_name='Điểm số'
         )
         df_melted['Tiêu chí'] = df_melted['Tiêu chí'].replace({
-            'Avg_AI_Capability': 'Năng lực của AI',
-            'Avg_Worker_Desire': 'Mong muốn Tự động hóa',
-            'Avg_Ethics_Empathy_Need': 'Yêu cầu Y đức & Thấu cảm'
+            'Avg_AI_Capability': 'Năng lực AI',
+            'Avg_Worker_Desire': 'Mong muốn TĐH',
+            'Avg_Ethics_Empathy_Need': 'Yêu cầu Thấu cảm'
         })
         fig3 = px.line_polar(
-            df_melted,
-            r='Điểm số',
-            theta='Tiêu chí',
-            color='Nhóm Kỹ Năng Y Tế',
-            line_close=True,
-            title="3. BIỂU ĐỒ RADAR CHUYÊN SÂU KỸ NĂNG Y TẾ (THANG ĐIỂM 5)"
+            df_melted, r='Điểm số', theta='Tiêu chí', color='Nhóm Kỹ Năng Y Tế', line_close=True
         )
         fig3.update_layout(
-            polar=dict(
-                radialaxis=dict(visible=True, range=[0, 5], tickfont=dict(color='#334155'), gridcolor='#CBD5E1'),
-                angularaxis=dict(tickfont=dict(color='#0369A1', size=11, family="sans-serif")),
-                bgcolor='#FFFFFF'
-            ),
-            plot_bgcolor='#FFFFFF',
+            polar=dict(radialaxis=dict(visible=True, range=[0, 5])),
             paper_bgcolor='#FFFFFF',
-            title_font_color='#0369A1',
-            title_x=0.0,
-            font=dict(color='#334155', size=12),
-            legend=dict(
-                font=dict(color='#334155', size=11),
-                title=dict(font=dict(color='#0369A1', size=12)),
-                bgcolor='rgba(255, 255, 255, 0.9)'
-            )
+            margin=dict(t=20, b=20, l=0, r=0),
+            height=380
         )
         st.plotly_chart(fig3, use_container_width=True)
-    else:
-        st.warning("⚠ Vui lòng chọn ít nhất 1 Kỹ năng ở thanh chọn bên trên để hiển thị biểu đồ Radar.")
 
-# TAB 3: PHÂN BỔ CHIẾN LƯỢC & NỖI SỢ MẤT VIỆC (TASK 4 - Ý TƯỞNG 4 & 5)
+        # Cụm Thẻ Khuyên Dùng dưới chân
+        with st.container(border=True):
+            col_t2_a, col_t2_b = st.columns(2)
+            
+            avg_ai = df_radar['Avg_AI_Capability'].mean()
+            avg_desire = df_radar['Avg_Worker_Desire'].mean()
+            avg_ethics = df_radar['Avg_Ethics_Empathy_Need'].mean()
+            
+            with col_t2_a:
+                st.markdown(f"""
+                <div class="card-left-eval">
+                    <h4 style="color: #4338CA; margin-top:0;">📈 Đánh Giá Năng Lực Kỹ Năng</h4>
+                    <ul style="margin-bottom:0; color: #1E1B4B;">
+                        <li><b>Năng lực AI trung bình:</b> <span style="color:#6366F1; font-weight:bold;">{avg_ai:.2f} / 5.0</span></li>
+                        <li><b>Nhu cầu Tự động hóa:</b> <span style="color:#6366F1; font-weight:bold;">{avg_desire:.2f} / 5.0</span></li>
+                        <li><b>Yêu cầu Y đức & Thấu cảm:</b> <span style="color:#6366F1; font-weight:bold;">{avg_ethics:.2f} / 5.0</span></li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
+                
+            with col_t2_b:
+                st.markdown(f"""
+                <div class="card-right-eval">
+                    <h4 style="color: #0369A1; margin-top:0;">🔍 Phân Tích Chuyên Sâu</h4>
+                    <p style="color: #0C4A6E; margin-bottom:0;">
+                        Các nhóm kỹ năng có yêu cầu <b>Y đức & Thấu cảm cao</b> thường đi kèm rủi ro lớn khi giao cho AI độc lập xử lý. Cần cơ chế kiểm soát kép giữa AI và Bác sĩ chuyên khoa.
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            st.markdown(f"""
+            <div class="conclusion-box-colorful">
+                <h4 style="color: #065F46; margin-top:0;">💡 KẾT LUẬN & ĐỀ XUẤT ĐÀO TẠO KỸ NĂNG</h4>
+                <p style="color: #064E3B; margin-bottom:0; font-size: 14.5px; line-height: 1.6;">
+                    Khuyến nghị đơn vị đào tạo nhân sự tập trung vào các kỹ năng có điểm <b>Thấu cảm > 3.5</b>. 
+                    Đối với các nhóm kỹ năng có điểm <b>Năng lực AI cao ({avg_ai:.1f})</b>, có thể tích hợp ngay vào quy trình đào tạo phần mềm tự động hóa cho nhân sự mới để giảm tải vận hành.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+
+# ------------------------------------------
+# TAB 3: PHÂN BỔ CHIẾN LƯỢC & TÂM LÝ LAO ĐỘNG
+# ------------------------------------------
 with tab3:
     st.subheader("📊 PHÂN BỔ CHIẾN LƯỢC & MỨC ĐỘ NỖI SỢ MẤT VIỆC")
-    col3, col4 = st.columns(2)
-    with col3:
-        df_donut = df_master.copy()
-        if selected_occ != "Tất cả Chuyên khoa":
-            df_donut = df_donut[df_donut['Occupation (O*NET-SOC Title)'] == selected_occ]
-        
-        quadrant_counts = df_donut['Phân Vùng Tự Động Hóa'].value_counts().reset_index()
-        quadrant_counts.columns = ['Phân Vùng', 'Số lượng Tác vụ']
-        donut_title = "4. TỶ LỆ PHÂN BỔ TÁC VỤ" if selected_occ == "Tất cả Chuyên khoa" else f"4. TỶ LỆ PHÂN BỔ TÁC VỤ: {selected_occ}"
-        
-        fig4 = px.pie(
-            quadrant_counts,
-            names='Phân Vùng',
-            values='Số lượng Tác vụ',
-            hole=0.4,
-            title=donut_title,
-            color='Phân Vùng',
-            color_discrete_map=med_colors
-        )
-        fig4.update_traces(
-            textinfo='percent',
-            textposition='inside',
-            textfont=dict(color='#FFFFFF', size=13, family="Arial Black")
-        )
-        fig4.update_layout(
-            paper_bgcolor='#FFFFFF',
-            plot_bgcolor='#FFFFFF',
-            title_font_color='#0369A1',
-            title_x=0.0,
-            legend=dict(
-                font=dict(color='#334155', size=11),
-                title=dict(font=dict(color='#0369A1', size=12))
-            )
-        )
-        st.plotly_chart(fig4, use_container_width=True)
+    
+    df_donut = df_filtered.copy()
+    quadrant_counts = df_donut['Phân Vùng Tự Động Hóa'].value_counts().reset_index()
+    quadrant_counts.columns = ['Phân Vùng', 'Số lượng Tác vụ']
+    
+    fig4 = px.pie(
+        quadrant_counts, names='Phân Vùng', values='Số lượng Tác vụ', hole=0.45,
+        color='Phân Vùng', color_discrete_map=med_colors, title="TỶ LỆ PHÂN BỔ TÁC VỤ KHẢO SÁT"
+    )
+    fig4.update_layout(margin=dict(t=30, b=10, l=0, r=0), paper_bgcolor='#FFFFFF', height=360)
+    st.plotly_chart(fig4, use_container_width=True)
 
-    with col4:
-        if 'Job_Security_Fear_Rate' in df_filtered.columns:
-            fear_df = df_filtered.groupby('Occupation (O*NET-SOC Title)')['Job_Security_Fear_Rate'].mean().reset_index()
-            fear_df = fear_df.sort_values(by='Job_Security_Fear_Rate', ascending=True)
-            fear_df = fear_df.rename(columns={'Job_Security_Fear_Rate': 'Tỷ lệ lo ngại'})
+    with st.container(border=True):
+        st.markdown("### 📊 Phân Tích Tâm Lý Nhân Sự & Đề Xuất Management")
+        
+        if 'Job_Security_Fear_Rate' in df_filtered.columns and not df_filtered.empty:
+            avg_fear = df_filtered['Job_Security_Fear_Rate'].mean()
+            max_fear_occ = df_filtered.groupby('Occupation (O*NET-SOC Title)')['Job_Security_Fear_Rate'].mean().idxmax()
             
-            fig5 = px.bar(
-                fear_df,
-                x='Tỷ lệ lo ngại',
-                y='Occupation (O*NET-SOC Title)',
-                orientation='h',
-                title="5. NỖI SỢ MẤT VIỆC THEO NHÓM ĐÃ LỌC",
-                color='Tỷ lệ lo ngại',
-                color_continuous_scale='Reds'
-            )
-            fig5.update_layout(
-                paper_bgcolor='#FFFFFF',
-                plot_bgcolor='#FFFFFF',
-                title_font_color='#0369A1',
-                title_x=0.0,
-                font=dict(color='#334155', size=12),
-                xaxis=dict(
-                    title="Tỷ lệ sợ bị thay thế (%)", 
-                    title_font=dict(color='#0369A1'),
-                    tickfont=dict(color='#334155'),
-                    gridcolor='#E2E8F0'
-                ),
-                yaxis=dict(
-                    title="Chuyên khoa / Ngành nghề", 
-                    title_font=dict(color='#0369A1'),
-                    tickfont=dict(color='#334155')
-                ),
-                coloraxis_colorbar=dict(
-                    title=dict(text="Tỷ lệ lo ngại", font=dict(color='#0369A1')),
-                    tickfont=dict(color='#334155')
-                )
-            )
-            st.plotly_chart(fig5, use_container_width=True)
-        else:
-            st.info("💡 Không tìm thấy cột 'Job_Security_Fear_Rate' trong dataset để vẽ biểu đồ nỗi sợ mất việc.")
+            col_t3_a, col_t3_b = st.columns(2)
+            with col_t3_a:
+                st.markdown(f"""
+                <div class="card-left-eval">
+                    <h4 style="color: #4338CA; margin-top:0;">📉 Chỉ Số Tâm Lý Lao Động</h4>
+                    <ul style="margin-bottom:0; color: #1E1B4B;">
+                        <li><b>Mức lo ngại mất việc TB:</b> <span style="color:#E11D48; font-weight:bold;">{avg_fear:.1f}%</span></li>
+                        <li><b>Chuyên khoa lo ngại nhất:</b> <span style="color:#4338CA; font-weight:bold;">{max_fear_occ}</span></li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
+            with col_t3_b:
+                st.markdown(f"""
+                <div class="card-right-eval">
+                    <h4 style="color: #0369A1; margin-top:0;">💬 Nhận Định Quản Trị</h4>
+                    <p style="color: #0C4A6E; margin-bottom:0;">
+                        Mức độ e ngại của nhân sự tập trung chủ yếu ở nhóm tác vụ phân tích dữ liệu tự động, nơi AI có tốc độ xử lý vượt trội so với thao tác thủ công.
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
 
-# TAB 4: TRA CỨU CHI TIẾT TÁC VỤ (TASK 4 - CHUẨN TƯƠNG TÁC 100%)
+            st.markdown(f"""
+            <div class="conclusion-box-colorful">
+                <h4 style="color: #065F46; margin-top:0;">💡 ĐỀ XUẤT TRUYỀN THÔNG NỘI BỘ</h4>
+                <p style="color: #064E3B; margin-bottom:0; font-size: 14.5px; line-height: 1.6;">
+                    Tỷ lệ lo ngại mất việc ở mức <b>{avg_fear:.1f}%</b>. Ban quản lý cần truyền thông rõ ràng rằng AI đóng vai trò <b>Trợ lý (Copilot)</b> nâng cao năng suất chứ không thay thế hoàn toàn vị trí chuyên môn của Y Bác sĩ.
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.info("💡 Chọn chuyên khoa cụ thể để xem phân tích tâm lý nhân sự.")
+
+# ------------------------------------------
+# TAB 4: TRA CỨU CHI TIẾT TÁC VỤ
+# ------------------------------------------
 with tab4:
     st.subheader("🔍 HỆ THỐNG TRA CỨU CHI TIẾT TÁC VỤ Y TẾ")
-    col_search1, col_search2 = st.columns([0.6, 0.4])
-    with col_search1:
-        search_kw = st.text_input("🔎 Tìm kiếm từ khóa tác vụ:", placeholder="Ví dụ: Record, Patient, Diagnosis...")
-    with col_search2:
-        selected_role = st.selectbox("🏥 Lọc theo Ngành nhỏ / Nghề nghiệp:", ["Tất cả"] + occupations)
+    
+    col_sel1, col_sel2 = st.columns(2)
+    with col_sel1:
+        selected_role = st.selectbox("🏥 Lọc theo Ngành nhỏ / Nghề nghiệp:", ["Tất cả"] + occupations, key="t4_role")
+        df_role_filtered = df_filtered.copy()
+        if selected_role != "Tất cả":
+            df_role_filtered = df_role_filtered[df_role_filtered['Occupation (O*NET-SOC Title)'] == selected_role]
+        available_tasks = df_role_filtered['Task'].unique().tolist()
+    
+    with col_sel2:
+        selected_task_option = st.selectbox("📋 Chọn Tác vụ Y tế cần tra cứu:", available_tasks if available_tasks else ["Không có dữ liệu"], key="t4_task")
 
-    df_search = df_filtered.copy()
-    if search_kw:
-        df_search = df_search[df_search['Task'].str.contains(search_kw, case=False, na=False)]
-    if selected_role != "Tất cả":
-        df_search = df_search[df_search['Occupation (O*NET-SOC Title)'] == selected_role]
-
-    st.markdown(f"**Hiển thị {len(df_search)} tác vụ phù hợp (💡 *Bấm chọn trực tiếp 1 dòng trên bảng để xem chi tiết thông số*):**")
-
-    display_cols = [
-        'Task',
-        'Occupation (O*NET-SOC Title)',
-        'Phân Vùng Tự Động Hóa',
-        'AI_Capability',
-        'Worker_Receptiveness',
-        'Automation_ROI_Score',
-        'Medical_Risk_Score'
-    ]
-
-    event = st.dataframe(
-        df_search[display_cols],
-        use_container_width=True,
-        selection_mode="single-row",
-        on_select="rerun",
-        column_config={
-            "Task": "Tác Vụ Y Tế",
-            "Occupation (O*NET-SOC Title)": "Chuyên Khoa",
-            "Phân Vùng Tự Động Hóa": "Phân Vùng Strategic",
-            "AI_Capability": st.column_config.NumberColumn("Năng Lực AI", format="%.2f"),
-            "Worker_Receptiveness": st.column_config.NumberColumn("Sự Đón Nhận", format="%.2f"),
-            "Automation_ROI_Score": st.column_config.NumberColumn("ROI Score", format="%.2f"),
-            "Medical_Risk_Score": st.column_config.NumberColumn("Rủi Ro Y Khoa", format="%.2f"),
-        },
-        height=280
-    )
-
-    st.markdown("---")
-
-    selected_rows = event.selection.get("rows", [])
-    if len(selected_rows) > 0:
-        row_idx = selected_rows[0]
-        detail_target = df_search.iloc[row_idx]
-    elif not df_search.empty:
-        detail_target = df_search.iloc[0]
+    if available_tasks and selected_task_option in available_tasks:
+        target_row = df_role_filtered[df_role_filtered['Task'] == selected_task_option].iloc[0]
     else:
-        detail_target = None
+        target_row = None
 
-    if detail_target is not None:
-        st.markdown(f"### 📋 THÔNG TIN CHI TIẾT TÁC VỤ: *{detail_target['Task']}*")
-        c_detail1, c_detail2, c_detail3 = st.columns(3)
-        with c_detail1:
-            st.info(f"🏥 **Chuyên khoa:** {detail_target['Occupation (O*NET-SOC Title)']}  \n📍 **Phân vùng:** {detail_target['Phân Vùng Tự Động Hóa']}")
-        with c_detail2:
-            st.success(f"🤖 **Năng lực AI:** {detail_target['AI_Capability']}/5.0  \n🎯 **Đón nhận của BS:** {detail_target['Worker_Receptiveness']}/5.0")
-        with c_detail3:
-            st.warning(f"📈 **Chỉ số ROI:** {detail_target['Automation_ROI_Score']}  \n⚠ **Rủi ro Y khoa:** {detail_target['Medical_Risk_Score']}")
+    if target_row is not None:
+        st.markdown("#### 📊 Bảng Chỉ Số Tác Vụ Dữ Liệu")
+        st.dataframe(
+            pd.DataFrame([target_row[['AI_Capability', 'Worker_Receptiveness', 'Automation_ROI_Score', 'Medical_Risk_Score']]]),
+            use_container_width=True
+        )
+
+        with st.container(border=True):
+            col_t4_a, col_t4_b = st.columns(2)
+            
+            with col_t4_a:
+                st.markdown(f"""
+                <div class="card-left-eval">
+                    <h4 style="color: #4338CA; margin-top:0;">📋 Tổng Quan Tác Vụ</h4>
+                    <p style="color: #1E1B4B; margin-bottom: 5px;"><b>Tác vụ:</b> <i>{target_row['Task']}</i></p>
+                    <p style="color: #1E1B4B; margin-bottom: 5px;"><b>Chuyên khoa:</b> <code>{target_row['Occupation (O*NET-SOC Title)']}</code></p>
+                    <p style="color: #1E1B4B; margin-bottom: 0;"><b>Phân vùng:</b> <span style="color:#059669; font-weight:bold;">{target_row['Phân Vùng Tự Động Hóa']}</span></p>
+                </div>
+                """, unsafe_allow_html=True)
+                
+            with col_t4_b:
+                st.markdown(f"""
+                <div class="card-right-eval">
+                    <h4 style="color: #0369A1; margin-top:0;">📈 Chi Tiết Điểm Số</h4>
+                    <ul style="margin-bottom:0; color: #0C4A6E;">
+                        <li><b>Năng lực AI:</b> <code>{target_row['AI_Capability']}/5.0</code> | <b>Mức đón nhận:</b> <code>{target_row['Worker_Receptiveness']}/5.0</code></li>
+                        <li><b>Điểm ROI:</b> <code>{target_row['Automation_ROI_Score']}</code> | <b>Rủi ro Y khoa:</b> <code>{target_row['Medical_Risk_Score']}/5.0</code></li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            q = target_row['Phân Vùng Tự Động Hóa']
+            if 'Mỏ Vàng' in q or 'Quick Wins' in q:
+                rec_text = "<b>Ưu tiên triển khai ngay.</b> Tác vụ có hiệu quả ROI cao, rủi ro thấp và được nhân sự đón nhận tích cực."
+            elif 'Thành Trì' in q or 'Safe Haven' in q:
+                rec_text = "<b>Không tự động hóa hoàn toàn.</b> Yêu cầu Bác sĩ chuyên khoa trực tiếp xử lý để đảm bảo an toàn lâm sàng."
+            elif 'Chờ Công Nghệ' in q or 'Unmet Needs' in q:
+                rec_text = "<b>Chạy thử nghiệm (Pilot).</b> Nhân sự rất mong muốn tự động hóa nhưng cần theo dõi độ chính xác của AI."
+            else:
+                rec_text = "<b>Đào tạo & Truyền thông.</b> Cần tập huấn để nhân sự tin tưởng hơn vào độ chính xác của công cụ AI."
+
+            st.markdown(f"""
+            <div class="conclusion-box-colorful">
+                <h4 style="color: #065F46; margin-top:0;">💡 ĐỀ XUẤT CHIẾN LƯỢC TRIỂN KHAI</h4>
+                <p style="color: #064E3B; margin-bottom:0; font-size: 14.5px; line-height: 1.6;">{rec_text}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    else:
+        st.info("Vui lòng chọn 1 tác vụ để tra cứu thông tin chi tiết.")
